@@ -1,11 +1,11 @@
 import React from 'react';
+import './default.scss';
+import Header from './components/Header';
 
 function App() {
   return (
     <div className="App">
-      <h1>
-        ShopiKazi
-      </h1>
+      <Header></Header>
     </div>
   );
 }
