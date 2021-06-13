@@ -95,6 +95,9 @@
     text-align: right !important;
     justify-content: space-between;
     height: 100px;
+    a{
+      color: #1e1e27;
+    }
     .navbar {
       display: flex;
       align-items: center;
@@ -113,8 +116,7 @@
         align-items: center;
         position: relative;
         width: 40px;
-        height: 40px;
-        color: #1e1e27;
+        height: 40px;        
         -webkit-transition: color 0.3s ease;
         -moz-transition: color 0.3s ease;
         -ms-transition: color 0.3s ease;

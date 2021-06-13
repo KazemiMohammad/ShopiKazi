@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from 'react-router-dom';
 import "./styles.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -22,28 +23,28 @@ export default function Header() {
         <div className="top_nav_right">
           <ul className="top_nav_menu">
             <li className="item">
-              <a href="\home">
+              <Link to="/profile">
                 My Account
                 <i>
                   <FontAwesomeIcon icon={faAngleDown} />
                 </i>
-              </a>
+              </Link>
               <ul className="account_selection">
                 <li>
-                  <a href="\home">
+                  <Link to="/signin">
                     <i aria-hidden="true">
                       <FontAwesomeIcon icon={faSignInAlt} />
                     </i>
                     Sign In
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="\home">
+                  <Link to="/signup">
                     <i aria-hidden="true">
                       <FontAwesomeIcon icon={faUserPlus} />
                     </i>
                     Register
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </li>
@@ -51,23 +52,25 @@ export default function Header() {
         </div>
       </div>
       <div className="main_nav_container">
+        <Link to="/">
         <div className="logo">
           <img src={Logo} alt="seat Relax, shop Easy" />
           <span className="title">Shopi Kazi</span>
         </div>
+        </Link>
         <nav className="navbar">
           <ul className="menu">
-            <li><a href="\home">Home</a></li>
-            <li><a href="\home">Shop</a></li>
-            <li><a href="\home">Promotion</a></li>
-            <li><a href="\home">Pages</a></li>
-            <li><a href="\home">Blog</a></li>
-            <li><a href="\home">Contact</a></li>
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/">Shop</Link></li>
+            <li><Link to="/">Promotion</Link></li>
+            <li><Link to="/">Pages</Link></li>
+            <li><Link to="/">Blog</Link></li>
+            <li><Link to="/">Contact</Link></li>
           </ul>
           <ul className="user">
-            <li className="Search"><a href="\home"><FontAwesomeIcon icon={faSearch} /></a></li>
-            <li className="User"><a href="\home"><FontAwesomeIcon icon={faUser} /></a></li>
-            <li className="Checkout"><a href="\home"><FontAwesomeIcon icon={faShoppingCart} /></a></li>
+            <li className="Search"><Link to="/"><FontAwesomeIcon icon={faSearch} /></Link></li>
+            <li className="User"><Link to="/signup"><FontAwesomeIcon icon={faUser} /></Link></li>
+            <li className="Checkout"><Link to="/"><FontAwesomeIcon icon={faShoppingCart} /></Link></li>
           </ul>
           <div className="hamburger_container">
             <i aria-hidden="true"><FontAwesomeIcon icon={faBars} /></i>
