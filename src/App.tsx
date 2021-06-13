@@ -1,11 +1,15 @@
-import React from 'react';
-import './default.scss';
-import Header from './components/Header';
+import React from "react";
+import "./default.scss";
+import MainLayout from "./Layouts/MainLayout";
+import Main from "./Pages/Main";
+import Signup from "./Pages/Signup";
 
 function App() {
   return (
     <div className="App">
-      <Header></Header>
+      <MainLayout>
+        <Main />
+      </MainLayout>
     </div>
   );
 }
