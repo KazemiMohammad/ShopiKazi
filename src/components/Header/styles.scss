@@ -164,24 +164,6 @@
         }
       }
     }
-    .logo {
-      height: 100%;
-      width: fit-content;
-      display: flex;
-      float: left;
-      align-items: center;
-      padding-left: 1rem;
-      img {
-        height: 30px;
-        padding-right: 5px;
-      }
-      .title {
-        font-size: 24px;
-        font-weight: bold;
-        color: var(--blue-dark);
-        white-space: nowrap;
-      }
-    }
   }
 }
 @media only screen and (max-width: 576px) {

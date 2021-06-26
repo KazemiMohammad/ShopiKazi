@@ -1,5 +1,5 @@
-import React from "react";
-import {Link} from 'react-router-dom';
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import "./styles.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -11,9 +11,17 @@ import {
   faAngleDown,
   faBars,
 } from "@fortawesome/free-solid-svg-icons";
-import Logo from "./../../assets/Logo.png";
+import Parse from "parse";
+import Logo from "../Logo";
 
 export default function Header() {
+  const [currentUser, setCurrentUser] = useState(String);
+
+  useEffect(() => {
+    if (Parse.User.current())
+      setCurrentUser(Parse.User.current()?.attributes.username);
+  }, []);
+
   return (
     <header className="header">
       <div className="top_nav">
@@ -24,7 +32,7 @@ export default function Header() {
           <ul className="top_nav_menu">
             <li className="item">
               <Link to="/profile">
-                My Account
+                {currentUser ? currentUser : "User Account"}
                 <i>
                   <FontAwesomeIcon icon={faAngleDown} />
                 </i>
@@ -52,28 +60,49 @@ export default function Header() {
         </div>
       </div>
       <div className="main_nav_container">
-        <Link to="/">
-        <div className="logo">
-          <img src={Logo} alt="seat Relax, shop Easy" />
-          <span className="title">Shopi Kazi</span>
-        </div>
-        </Link>
+        <Logo/>        
         <nav className="navbar">
           <ul className="menu">
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="/">Shop</Link></li>
-            <li><Link to="/">Promotion</Link></li>
-            <li><Link to="/">Pages</Link></li>
-            <li><Link to="/">Blog</Link></li>
-            <li><Link to="/">Contact</Link></li>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/">Shop</Link>
+            </li>
+            <li>
+              <Link to="/">Promotion</Link>
+            </li>
+            <li>
+              <Link to="/">Pages</Link>
+            </li>
+            <li>
+              <Link to="/">Blog</Link>
+            </li>
+            <li>
+              <Link to="/">Contact</Link>
+            </li>
           </ul>
           <ul className="user">
-            <li className="Search"><Link to="/"><FontAwesomeIcon icon={faSearch} /></Link></li>
-            <li className="User"><Link to="/signup"><FontAwesomeIcon icon={faUser} /></Link></li>
-            <li className="Checkout"><Link to="/"><FontAwesomeIcon icon={faShoppingCart} /></Link></li>
+            <li className="Search">
+              <Link to="/">
+                <FontAwesomeIcon icon={faSearch} />
+              </Link>
+            </li>
+            <li className="User">
+              <Link to="/profile">
+                <FontAwesomeIcon icon={faUser} />
+              </Link>
+            </li>
+            <li className="Checkout">
+              <Link to="/">
+                <FontAwesomeIcon icon={faShoppingCart} />
+              </Link>
+            </li>
           </ul>
           <div className="hamburger_container">
-            <i aria-hidden="true"><FontAwesomeIcon icon={faBars} /></i>
+            <i aria-hidden="true">
+              <FontAwesomeIcon icon={faBars} />
+            </i>
           </div>
         </nav>
       </div>

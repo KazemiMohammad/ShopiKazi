@@ -1,0 +1,95 @@
+.signup-page-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .signup-frame {
+    display: flex;
+    flex-direction: row;
+    justify-content: stretch;
+    height: 400px;
+    width: 650px;
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
+
+    .form {
+      height: 100%;
+      width: auto;
+      display: flex;
+      -webkit-transition: all 0.5s 0s ease;
+      -moz-transition: all 0.5s 0s ease;
+      -o-transition: all 0.5s 0s ease;
+      transition: all 0.5s 0s ease;
+      .signin {
+        padding: 10px;
+        width: 325px;
+        -webkit-transition: all 0.5s 0s ease;
+        -moz-transition: all 0.5s 0s ease;
+        -o-transition: all 0.5s 0s ease;
+        transition: all 0.5s 0s ease;
+      }
+      .signup {
+        padding: 10px;
+        width: 325px;
+        -webkit-transition: all 0.5s 0s ease;
+        -moz-transition: all 0.5s 0s ease;
+        -o-transition: all 0.5s 0s ease;
+        transition: all 0.5s 0s ease;
+      }
+      .banner {
+        padding: 10px;
+        width: 325px;
+        height: 100%;
+        position: relative;
+        background-image: url("../../assets/singup-banner.jpg");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        -webkit-transition: all 0.5s 0s ease;
+        -moz-transition: all 0.5s 0s ease;
+        -o-transition: all 0.5s 0s ease;
+        transition: all 0.5s 0s ease;
+      }
+      &.right {
+        transform: translateX(0%);
+      }
+      &.left {
+        transform: translateX(calc(-100% / 3));
+      }
+      .show {
+        transform: scale(1);
+      }
+      .hide {
+        transform: scale(0);
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .signup-frame {
+    box-shadow: none !important;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .signup-page-container {
+    .signup-frame {
+      display: flex;
+      justify-content: stretch;
+      height: 100%;
+      width: 100%;
+      border-radius: 0px;
+      .form {
+        text-decoration: none;
+
+        .banner {
+          display: none;
+        }
+        &.left {
+          transform: translateX(calc(-50%));
+        }
+      }
+    }
+  }
+}
