@@ -1,8 +1,8 @@
 :root {
   --base-color: #f9ab25;
-  --top-nav-bg-color:#343a40;
+  --top-nav-bg-color: #343a40;
 
-  --primary: #007bff;
+  --primary: #f9ab25;
   --secondary: #868e96;
   --success: #28a745;
   --info: #17a2b8;
@@ -10,12 +10,13 @@
   --danger: #dc3545;
   --light: #f8f9fa;
   --dark: #343a40;
-  
+  --shadow: #ddd;
+
+  --box-shadow: 0px 0px 10px rgb(134, 128, 128);
+
   --breakpoint-xs: 0;
   --breakpoint-sm: 576px;
   --breakpoint-md: 768px;
   --breakpoint-lg: 992px;
   --breakpoint-xl: 1200px;
-
-
 }
